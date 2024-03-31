@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database:
+      dezc24-exoplanets
+    schema:
+      exo_planets
+    tables:
+      - name: planets
