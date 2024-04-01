@@ -21,7 +21,7 @@ variable "bq_dataset_name" {
 
 variable "credentials" {
   description = "My Credentials"
-  default     = "../mage/keys.json"
+  default     = "keys.json"
 }
 
 variable "region" {

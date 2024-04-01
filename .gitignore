@@ -1,0 +1,4 @@
+mage_data/
+.env
+keys.json
+.terraform
