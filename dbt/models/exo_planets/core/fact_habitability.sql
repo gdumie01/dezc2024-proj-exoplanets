@@ -13,12 +13,12 @@ with planet_data as (
             when planet_distance_to_host between 0.75 and 1.75 then 'Within Goldilock Zone'
             when planet_mass is null or planet_radius is null or planet_distance_to_host is null then 'Features Unknown'
             else 'Not habitable'
-        end as earth_like
+        end as habitability
     from {{ ref('dim_planets') }}
 )
 
 select 
     planet_id,
     planet_name,
-    earth_like
+    habitability
 from planet_data

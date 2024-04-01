@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 select 
-    DISTINCT planet_id, 
+    planet_id, 
     planet_name,
     planet_mass,
     planet_radius,

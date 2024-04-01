@@ -7,4 +7,4 @@ sources:
     schema:
       exo_planets
     tables:
-      - name: nasa_exo_planets_raw
+      - name: nasa_exo_planets_raw_optimized
