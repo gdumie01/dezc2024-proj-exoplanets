@@ -103,6 +103,7 @@ cd terraform
 ```
 4. Edit terraform **variables.tf** file.
 You need to change the variable `project` to the id of your GCP project and the bucket name `data-lake-bucket` to something that doesn't clash with existing buckets (e.g.: add 1 to the end)
+
 ![Terraform](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/terraform-vars.png)
 
 My resources are created for region **EU**. If needed, you can change it in **variables.tf** file - make sure you change it accordingly in the following steps, specially in dbt.
@@ -122,9 +123,9 @@ terraform apply
 When you are done with the project, you can release all resources by running `terraform destroy`.
 
 #### Executing Mage Pipeline
-8. `cd` into the mage directory
-9. Rename `dev.env` to simply `.env`.
-10. Build the Mage containter
+8. `cd` into the mage directory (`cd ../mage` in case you are in the terraform directory)
+10. Rename `dev.env` to simply `.env`.
+11. Build the Mage containter
 ```bash
 docker compose build
 ```
