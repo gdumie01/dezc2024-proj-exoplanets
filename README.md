@@ -19,7 +19,7 @@ Space is always something that has fascinated me. More recently I have been an a
 
 There are of course many other factors to take into account before packing and move into another exoplanet (radiation, atmosphere composition, planet constitution whether solid or gas, etc), but let's bear with just these for the purpose of the exercise.
 
-NOTE: I don't have any background in astronomy or astrophysic - so if you are a professional scientist reading this, please allow for some gross simplfications, this is just a Data Engineering project ;)
+NOTE: I don't have any background in astronomy or astrophysic - so if you are a professional scientist reading this, please allow for some gross simplfications, this is just a Data Engineering project :wink:
 
 ### Pipeline description
 #### Tech Stack
@@ -74,3 +74,83 @@ Setting up GCP would require a GCP account. A GCP account can be created for fre
    - Select the "JSON" key type and click "Create" to download the private key file. This key would be used to interact to the google API from Mage.
    - Store the json key as you please, but then copy it into the `mage` directory of this project  and
 give it exactly the name `keys.json`.
+
+### Executing the code
+
+*Note: these instructions are used for macOS/Linux/WSL, for Windows it may differ*
+
+1. Clone this repository
+2. `cd` into the terraform directory. We are using **terraform** to create google cloud resorces. 
+    My resources are created for region **EU**. If needed, you can change it in **variables.tf** file. In this file you need to change the **project ID** to the project ID you created in GCP.
+3. To prepare your working directory for other commands we are using:
+
+```bash
+terraform init
+```
+4. To show changes required by the current configuration you can run:
+
+```bash
+terraform plan
+```
+5. To create or update infrastructure we are using:
+
+```bash
+terraform apply
+```
+6. To destroy previously-created infrastructure we are using:
+
+```bash
+terraform destroy
+```
+**IMPORTANT**: This line uses when you are done with the whole project.
+
+7. `cd` into the mage directory
+8. Rename `dev.env` to simply `.env`.
+
+9. Now, let's build the container
+
+```bash
+docker compose build
+```
+10. Finally, start the Docker container:
+
+```bash
+docker compose up
+```
+11. We just initialized a mage repository. It is present in your project under the name `air-quality`. Now, navigate to http://localhost:6789 in your browser!
+12. Time to work with mage. Go to the browser, find **pipelines**, click on air_quality_api pipeline and click on Run@once. 
+
+<table><tr>
+<td> <img src="images/mage-find-pipelines.png" width="150"/> </td>
+<td> <img src="images/pipeline-name.png" width="350"/> </td>
+<td> <img src="images/run-pipeline.png" width="250"/> </td>
+<tr>
+<td>Find pipeline</td>
+<td>Pipeline </td>
+<td>Run pipeline </td>
+</tr>
+</tr></table>
+
+## Visualizing the results
+I have publishing the following [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c) to exhibit the results of the final datasets.
+
+![Dashboard](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/dashboard.png)
+
+Key insights for me were:
+* 2013 and 2016 really helped on the advancement of our knowledge about exoplanets - 40% of all know planets were discovered in those years.
+* Instruments in space are key to help us discover new planets, although since 2016 ground facilities have also seen their contribution weight increase on the discovery of new planets
+* Transit is by far the most used discovery method technique
+* Despite all this, for 77% of the discovered planets we are missing key information that would enable us to understand where they are located within their solar systems and their mass which could help us understand what type of planets they are
+
+**In conclusion**: despite the rapid recent advacements of science, we are still a long way to be sure about habitability of exoplanets by humans.
+
+## Evaluation Criteria
+
+I aimed to hit the following evaluation criteria:
+- :white_check_mark: **Problem description**: Hope the contents of this readme are enough to understand my motivations and the problem I was trying to address with this project.
+- :white_check_mark: **Cloud**: The project is developed on the cloud (Google) and IaC tools (Terraform) are used for provisioning the infrastructure.
+- :white_check_mark: **Data Ingestion**: Fully deployed workflow orchestration using Mage.
+- :white_check_mark: **Data warehouse**: Tables are created in BigQuery and optimized for the upstream queries based on clustering and partition (see comments in the code).
+- :white_check_mark: **Transformations**: Tables are transformed using dbt, including calculation of surface gravity and computation of planet type according to some rules.
+- :white_check_mark: **Dashboard**: 2 tiles were created - one linked to distribution of the data across a temporal line (evolution of planet discoveries) and another with categories generated based on planet's data.
+- :white_check_mark: **Reproducibility**: Hopefully it works when you follow the instructions :smile:.
