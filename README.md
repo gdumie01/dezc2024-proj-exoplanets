@@ -126,17 +126,15 @@ docker compose build
 ```bash
 docker compose up
 ```
-10. Once the docker container is running navigate to (http://localhost:6789) in your browser
-11. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
+10. Once the docker container is running navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
+11. Once it loads, click on Run@once and set the run-time variables `bucket_name` and `gcp_project_id` with the same content you specified in the `terraform variables.tf` file and click run.
 
 <table><tr>
-<td> <img src="images/go-to-pipelines.png" width="150"/> </td>
-<td> <img src="images/locate-pipeline.png" width="350"/> </td>
-<td> <img src="images/run.png" width="250"/> </td>
+<td> <img src="images/run.png"/> </td>
+<td> <img src="images/terraform-vars.png"/> </td>
 <tr>
-<td>Find pipeline</td>
-<td>Pipeline </td>
-<td>Run pipeline </td>
+<td>Click Run@once</td>
+<td>Specify variables</td>
 </tr>
 </tr></table>
 
