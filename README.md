@@ -80,7 +80,10 @@ give it exactly the name `keys.json`.
 *Note: these instructions are used for macOS/Linux/WSL, for Windows it may differ*
 
 1. Clone this repository
-2. `cd` into the terraform directory. We are using **terraform** to create google cloud resorces. 
+```bash
+git clone https://github.com/benitomartin/de-ch-weather.git
+```
+3. `cd` into the terraform directory. We are using **terraform** to create google cloud resorces. 
     My resources are created for region **EU**. If needed, you can change it in **variables.tf** file. In this file you need to change the **project ID** to the project ID you created in GCP.
 
 #### Running Terraform
@@ -115,7 +118,7 @@ docker compose up
 <table><tr>
 <td> <img src="images/go-to-pipelines.png" width="150"/> </td>
 <td> <img src="images/locate-pipeline.png" width="350"/> </td>
-<td> <img src="images/run-pipeline.png" width="250"/> </td>
+<td> <img src="images/run.png" width="250"/> </td>
 <tr>
 <td>Find pipeline</td>
 <td>Pipeline </td>
