@@ -108,7 +108,8 @@ blocks:
     export_write_policy: replace
     limit: 1000
     use_raw_sql: true
-  downstream_blocks: []
+  downstream_blocks:
+  - run_dbt
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -121,6 +122,35 @@ blocks:
   upstream_blocks:
   - download_to_bucket
   uuid: gc_to_bq_optimized
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: bigquery
+    data_provider_database: ''
+    data_provider_profile: default
+    data_provider_schema: exo_planets
+    dbt:
+      command: run
+    dbt_profile_target: dev
+    dbt_project_name: dbt/exoplanets-dbt
+    disable_query_preprocessing: false
+    export_write_policy: replace
+    file_source:
+      path: dbts/run_dbt.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: run dbt
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - gc_to_bq_optimized
+  uuid: run_dbt
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

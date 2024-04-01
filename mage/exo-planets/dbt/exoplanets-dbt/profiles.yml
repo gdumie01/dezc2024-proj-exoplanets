@@ -1,0 +1,19 @@
+# profiles.yml
+
+exo_planets-dbt:
+  target: dev
+
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dezc24-exoplanets
+      dataset: dw_exo_planets
+      threads: 1
+      location: EU
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+      retries_seconds: 1
+      keepalives_idle: 10
+      keyfile: /home/src/keys.json

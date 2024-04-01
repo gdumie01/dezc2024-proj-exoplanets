@@ -1,0 +1,14 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_exoplanets-dbt
+  schema: dw_exo_planets
+  tables:
+  - description: Dataframe for block `gc_to_bq_optimized` of the `nasa_exoplanets_to_gcs`
+      mage pipeline.
+    identifier: mage_nasa_exoplanets_to_gcs_gc_to_bq_optimized
+    meta:
+      block_uuid: gc_to_bq_optimized
+      pipeline_uuid: nasa_exoplanets_to_gcs
+    name: nasa_exoplanets_to_gcs_gc_to_bq_optimized
+version: 2

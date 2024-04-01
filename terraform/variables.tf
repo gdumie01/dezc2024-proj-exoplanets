@@ -13,11 +13,10 @@ variable "data-lake-bucket" {
 
 ## Optional changes below
 
-
-variable "bq_dbt_dev_dataset_name" {
+variable "bq_dataset_name" {
   description = "dbt dataset"
   #Update the below to what you want your dataset to be called
-  default     = "dbt_gdumiense"
+  default     = "dw_exo_planets"
 }
 
 variable "credentials" {
