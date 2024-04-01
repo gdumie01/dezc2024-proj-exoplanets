@@ -21,8 +21,8 @@ select
     cast(pl_orbsmax as numeric) as planet_distance_to_host,
     cast(pl_rade as numeric) as planet_radius
 
-from {{ source('staging','nasa_exo_planets_raw') }}
--- where EXTRACT(YEAR from pickup_datetime) = 2019
+from {{ source('staging','nasa_exo_planets_raw_optimized') }}
+where default_flag = 1
 
 -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
 {% if var('is_test_run', default=true) %}
