@@ -2,9 +2,18 @@
 
 This repository contains the code and materials for the final project of the Data Engineering Zoomcamp  in the 2024 Cohort. 
 
-The project focuses on building an end-to-end data pipeline from [NASA's exoplanet archive](https://exoplanetarchive.ipac.caltech.edu/index.html) all the way up to the datasets that feed the following [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c):
+The project focuses on building an end-to-end data pipeline from [NASA's exoplanet archive](https://exoplanetarchive.ipac.caltech.edu/index.html) all the way up to the datasets that feed the final [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c):
 
-![Dashboard](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/dashboard.png)
+<table><tr>
+<td> <img src="images/pipeline.png"/> </td>
+<td> <img src="images/dbt-lineage.png"/> </td>
+ <td> <img src="images/dashboard.png"/> </td>
+</tr>
+<tr>
+<td>Mage Pipeline DAG</td>
+<td>DBT model lineage Graph</td>
+<td>Looker Dashboard</td>
+</tr></table>
 
 ## Project description
 
@@ -45,15 +54,6 @@ The project has been structured with the following folders and files:
 * It then proceeds on to creating optimized (via clustering and partioning) and non-optimized raw versions of the data in the DataWarehouse.
 * Once the data is in BigQuery, several steps are perfomed using dbt (including generating ids, calculating some parameters like gravity surface) to have the final clean dataset again in BigQuery ready for visualization.
 
-<table><tr>
-<td> <img src="images/pipeline.png" width="350"/> </td>
-<td> <img src="images/dbt-lineage.png" width="400"/> </td>
-</tr>
-<tr>
-<td>Pipeline DAG</td>
-<td>Lineage Graph</td>
-</tr></table>
-
 ## Project Setup
 ### Prerequisites
 1. [Docker](https://docs.docker.com/engine/install/)
@@ -90,39 +90,50 @@ give it exactly the name `keys.json`.
 
 1. Clone this repository
 ```bash
-git clone https://github.com/benitomartin/de-ch-weather.git
+git clone https://github.com/gdumie01/dezc2024-proj-exoplanets.git
 ```
-3. `cd` into the terraform directory. We are using **terraform** to create google cloud resorces. 
-    My resources are created for region **EU**. If needed, you can change it in **variables.tf** file. In this file you need to change the **project ID** to the project ID you created in GCP.
-
+2. Enter its root directory:
+```bash
+cd dezc2024-proj-exoplanets
+```
 #### Running Terraform
-3. Prepare working directory for following commands:
+3. Go to terraform directory
+```bash
+cd terraform
+```
+4. Edit terraform **variables.tf** file.
+You need to change the variable `project` to the id of your GCP project and the bucket name `data-lake-bucket` to something that doesn't clash with existing buckets (e.g.: add 1 to the end)
+![Terraform](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/terraform-vars.png)
+
+My resources are created for region **EU**. If needed, you can change it in **variables.tf** file - make sure you change it accordingly in the following steps, specially in dbt.
+
+6. Prepare working directory for following commands:
 ```bash
 terraform init
 ```
-4. Check execution plan:
+6. Check execution plan:
 ```bash
 terraform plan
 ```
-5. Create the infrastructure:
+7. Create the infrastructure:
 ```bash
 terraform apply
 ```
 When you are done with the project, you can release all resources by running `terraform destroy`.
 
 #### Executing Mage Pipeline
-6. `cd` into the mage directory
-7. Rename `dev.env` to simply `.env`.
-8. Build the Mage containter
+8. `cd` into the mage directory
+9. Rename `dev.env` to simply `.env`.
+10. Build the Mage containter
 ```bash
 docker compose build
 ```
-9. Start the Docker container:
+11. Start the Docker container:
 ```bash
 docker compose up
 ```
-10. Once the docker container is running navigate to (http://localhost:6789) in your browser
-11. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
+12. Once the docker container is running navigate to (http://localhost:6789) in your browser
+13. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
 
 <table><tr>
 <td> <img src="images/go-to-pipelines.png" width="150"/> </td>
@@ -142,10 +153,10 @@ Pipeline should look like this:
 ![Dashboard](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/pipeline.png)
 
 #### Setting up and running dbt project
-11. Create a new project in your dbt account (in case you are using a free tier of dbtcloud you might need to delete your other project).
+14. Create a new project in your dbt account (in case you are using a free tier of dbtcloud you might need to delete your other project).
     Ensure that the dataset name is set to the same you used in Terraform (`dw_exo_planets` by default) and connect it to the subfolder `dbt` of the repo.
     Use the same keys you used for mage.
-13. 
+15. 
 
 
 ## Visualizing the results
