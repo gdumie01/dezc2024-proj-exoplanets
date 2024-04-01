@@ -5,12 +5,6 @@ variable "project" {
   default     = "dezc24-exoplanets"
 }
 
-variable "bq_dataset_name" {
-  description = "Datawarehouse Name"
-  #Update the below to what you want your dataset to be called
-  default     = "dw_exo_planets"
-}
-
 variable "data-lake-bucket" {
   description = "Data Lake"
   #Update the below to a unique bucket name
@@ -18,6 +12,7 @@ variable "data-lake-bucket" {
 }
 
 ## Optional changes below
+
 
 variable "bq_dbt_dev_dataset_name" {
   description = "dbt dataset"
