@@ -3,6 +3,7 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+import datetime
 
 @transformer
 def transform(data, *args, **kwargs):
@@ -21,7 +22,10 @@ def transform(data, *args, **kwargs):
     """
     # Specify your transformation logic here
 
-    return data
+    transformed_data = data.copy()
+    transformed_data['discovery_date'] = transformed_data['disc_year'].apply(lambda x: datetime.datetime(x, 7, 1))
+
+    return transformed_data
 
 
 @test

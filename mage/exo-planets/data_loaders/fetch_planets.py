@@ -16,12 +16,11 @@ def load_data_from_api(*args, **kwargs):
         'default_flag',
         'pl_name', ## Planet name
         'hostname', ## Host star name
-        'disc_year',
-        'disc_locale', 
-        'pl_masse', 
-        'pl_controv_flag', 
-        'pl_orbsmax', 
-        'pl_rade', ## Planet radius
+        'disc_year', ## Discovery Year
+        'disc_locale', ## Discovery Locale
+        'pl_masse', ## Planet Mass in Earth Mass equivalents
+        'pl_orbsmax', ## Maximum radius from the host start in AU
+        'pl_rade', ## Planet radius in Earth Mass equivalent
         'discoverymethod' ## Planet discovery method
     ]
 
