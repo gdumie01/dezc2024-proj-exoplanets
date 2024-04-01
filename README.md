@@ -60,7 +60,6 @@ The project has been structured with the following folders and files:
 2. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 3. [Terraform](https://developer.hashicorp.com/terraform/install)
 4. Setup a GCP account
-5. [dbt](https://cloud.getdbt.com/) account and project
 
 Before running the code you need to follow the steps below.
 
@@ -148,12 +147,6 @@ After it runs, you will have:
 * the `dw_exo_planets` dataset in BigQuery with the following tables and views:
 
 ![Outputs](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/dw-outputs.png)
-
-#### Setting up and running dbt project
-14. Create a new project in your dbt account (in case you are using a free tier of dbtcloud you might need to delete your other project).
-    Ensure that the dataset name is set to the same you used in Terraform (`dw_exo_planets` by default) and connect it to the subfolder `dbt` of the repo.
-    Use the same keys you used for mage.
-15. Select BigQuery
 
 
 ## Visualizing the results
