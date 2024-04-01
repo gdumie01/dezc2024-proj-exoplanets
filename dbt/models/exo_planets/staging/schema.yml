@@ -5,6 +5,6 @@ sources:
     database:
       dezc24-exoplanets
     schema:
-      exo_planets
+      dw_exo_planets
     tables:
       - name: nasa_exo_planets_raw_optimized

@@ -11,8 +11,8 @@ select
     {{ dbt.safe_cast("disc_year", api.Column.translate_type("integer")) }} as dicovery_year,
     
     -- timestamps
-    --cast(pickup_datetime as timestamp) as pickup_datetime
-
+    cast(discovery_date as timestamp) as discovery_date,
+    
     cast(pl_name as string) as planet_name,
     cast(hostname as string) as star_name,
     cast(disc_locale as string) as discovery_locale,
