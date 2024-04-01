@@ -97,44 +97,40 @@ git clone https://github.com/gdumie01/dezc2024-proj-exoplanets.git
 cd dezc2024-proj-exoplanets
 ```
 #### Running Terraform
-3. Go to terraform directory
-```bash
-cd terraform
-```
-4. Edit terraform **variables.tf** file.
+
+3. Edit terraform **variables.tf** file.
 You need to change the variable `project` to the id of your GCP project and the bucket name `data-lake-bucket` to something that doesn't clash with existing buckets (e.g.: add 1 to the end)
 
 ![Terraform](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/terraform-vars.png)
 
 My resources are created for region **EU**. If needed, you can change it in **variables.tf** file - make sure you change it accordingly in the following steps, specially in dbt.
 
-6. Prepare working directory for following commands:
+4. Prepare working directory for following commands:
 ```bash
 terraform init
 ```
-6. Check execution plan:
+5. Check execution plan:
 ```bash
 terraform plan
 ```
-7. Create the infrastructure:
+6. Create the infrastructure:
 ```bash
 terraform apply
 ```
 When you are done with the project, you can release all resources by running `terraform destroy`.
 
 #### Executing Mage Pipeline
-8. `cd` into the mage directory (`cd ../mage` in case you are in the terraform directory)
-10. Rename `dev.env` to simply `.env`.
-11. Build the Mage containter
+7. Rename `dev.env` to simply `.env`.
+8. Build the Mage containter
 ```bash
 docker compose build
 ```
-11. Start the Docker container:
+9. Start the Docker container:
 ```bash
 docker compose up
 ```
-12. Once the docker container is running navigate to (http://localhost:6789) in your browser
-13. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
+10. Once the docker container is running navigate to (http://localhost:6789) in your browser
+11. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
 
 <table><tr>
 <td> <img src="images/go-to-pipelines.png" width="150"/> </td>
@@ -147,7 +143,11 @@ docker compose up
 </tr>
 </tr></table>
 
-After it runs, you will have a parquet file in the datalake and 3 tables in Google BigQuery: `nasa_exo_planets_raw`,`nasa_exo_planets_raw_ext`,`nasa_exo_planets_raw_optimized`
+After it runs, you will have:
+* A parquet file in the datalake
+* the `dw_exo_planets` dataset in BigQuery with the following tables and views:
+
+![Outputs](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/dw-outputs.png)
 
 #### Setting up and running dbt project
 14. Create a new project in your dbt account (in case you are using a free tier of dbtcloud you might need to delete your other project).
