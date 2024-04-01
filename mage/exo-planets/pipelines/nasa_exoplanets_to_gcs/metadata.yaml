@@ -73,14 +73,14 @@ blocks:
     data_provider_database: ''
     data_provider_profile: default
     data_provider_schema: exo_planets
-    data_provider_table: planets
+    data_provider_table: nasa_exo_planets_raw
     dbt: {}
     disable_query_preprocessing: false
     export_write_policy: replace
     limit: 1000
     upstream_block_configuration:
       load_from_bucket:
-        table_name: exo_planets.planets
+        table_name: nasa_exo_planets_raw
     use_raw_sql: false
   downstream_blocks: []
   executor_config: null
