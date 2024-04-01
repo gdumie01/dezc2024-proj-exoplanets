@@ -42,10 +42,8 @@ NOTE: I don't have any background in astronomy or astrophysic - so if you are a 
 
 #### Project Structure
 The project has been structured with the following folders and files:
-* `mage`: Workflow orchestration pipeline
-* `dbt`: Data transformation logic
-* `looker`: Report from Looker Studio
-* `terraform`: IaC stream-based pipeline infrastructure in GCP using Terraform
+* `exo-planets-pipeline`: With all the code with for orchestration pipeline, including dbt models under `èxo-planets-pipeline/dbt` (which can be added as a dbt sub-directory in dbt cloud)
+* `dashboard`: Report export from Looker Studio
 * `images`: Printouts of results
 
 #### High level overview:
