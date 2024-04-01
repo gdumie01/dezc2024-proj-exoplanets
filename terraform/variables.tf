@@ -1,14 +1,33 @@
-variable "credentials" {
-  description = "My Credentials"
-  default     = "../mage/keys.json"
-  #ex: if you have a directory where this file is called keys with your service account json file
-  #saved there as my-creds.json you could use default = "./keys/my-creds.json"
-}
-
+## Mandatory changes
 
 variable "project" {
   description = "Project"
   default     = "dezc24-exoplanets"
+}
+
+variable "bq_dataset_name" {
+  description = "Datawarehouse Name"
+  #Update the below to what you want your dataset to be called
+  default     = "dw_exo_planets"
+}
+
+variable "data-lake-bucket" {
+  description = "Data Lake"
+  #Update the below to a unique bucket name
+  default     = "dl_exoplanets"
+}
+
+## Optional changes below
+
+variable "bq_dataset_name" {
+  description = "dbt dataset"
+  #Update the below to what you want your dataset to be called
+  default     = "dbt_gdumiense"
+}
+
+variable "credentials" {
+  description = "My Credentials"
+  default     = "../mage/keys.json"
 }
 
 variable "region" {
@@ -21,18 +40,6 @@ variable "location" {
   description = "Project Location"
   #Update the below to your desired location
   default     = "EU"
-}
-
-variable "bq_dataset_name" {
-  description = "My BigQuery Dataset Name"
-  #Update the below to what you want your dataset to be called
-  default     = "exo_planets"
-}
-
-variable "data-lake-bucket" {
-  description = "My Storage Bucket for new data"
-  #Update the below to a unique bucket name
-  default     = "dezc2024-project-exoplanets"
 }
 
 variable "gcs_storage_class" {
