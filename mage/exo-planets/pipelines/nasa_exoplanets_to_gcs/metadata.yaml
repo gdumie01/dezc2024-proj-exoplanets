@@ -61,19 +61,19 @@ blocks:
   language: python
   name: load_from_bucket
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks:
   - download_to_bucket
   uuid: load_from_bucket
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     data_provider: bigquery
     data_provider_database: ''
     data_provider_profile: default
-    data_provider_schema: exo_planets
+    data_provider_schema: dw_exo_planets
     data_provider_table: nasa_exo_planets_raw
     dbt: {}
     disable_query_preprocessing: false
