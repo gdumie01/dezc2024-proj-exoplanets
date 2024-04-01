@@ -149,15 +149,11 @@ docker compose up
 
 After it runs, you will have a parquet file in the datalake and 3 tables in Google BigQuery: `nasa_exo_planets_raw`,`nasa_exo_planets_raw_ext`,`nasa_exo_planets_raw_optimized`
 
-Pipeline should look like this:
-
-![Dashboard](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/pipeline.png)
-
 #### Setting up and running dbt project
 14. Create a new project in your dbt account (in case you are using a free tier of dbtcloud you might need to delete your other project).
     Ensure that the dataset name is set to the same you used in Terraform (`dw_exo_planets` by default) and connect it to the subfolder `dbt` of the repo.
     Use the same keys you used for mage.
-15. 
+15. Select BigQuery
 
 
 ## Visualizing the results
