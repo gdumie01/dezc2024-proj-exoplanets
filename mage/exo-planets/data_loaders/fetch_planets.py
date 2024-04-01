@@ -13,11 +13,10 @@ def load_data_from_api(*args, **kwargs):
     Template for loading data from API
     """
     columns = [
+        'default_flag',
         'pl_name', ## Planet name
         'hostname', ## Host star name
-        'sy_snum', 
-        'sy_pnum', 
-        'disc_year', 
+        'disc_year',
         'disc_locale', 
         'pl_masse', 
         'pl_controv_flag', 
