@@ -82,47 +82,39 @@ give it exactly the name `keys.json`.
 1. Clone this repository
 2. `cd` into the terraform directory. We are using **terraform** to create google cloud resorces. 
     My resources are created for region **EU**. If needed, you can change it in **variables.tf** file. In this file you need to change the **project ID** to the project ID you created in GCP.
-3. To prepare your working directory for other commands we are using:
 
+#### Running Terraform
+3. Prepare working directory for following commands:
 ```bash
 terraform init
 ```
-4. To show changes required by the current configuration you can run:
-
+4. Check execution plan:
 ```bash
 terraform plan
 ```
-5. To create or update infrastructure we are using:
-
+5. Create the infrastructure:
 ```bash
 terraform apply
 ```
-6. To destroy previously-created infrastructure we are using:
+When you are done with the project, you can release all resources by running `terraform destroy`.
 
-```bash
-terraform destroy
-```
-**IMPORTANT**: This line uses when you are done with the whole project.
-
-7. `cd` into the mage directory
-8. Rename `dev.env` to simply `.env`.
-
-9. Now, let's build the container
-
+#### Executing Mage Pipeline
+6. `cd` into the mage directory
+7. Rename `dev.env` to simply `.env`.
+8. Build the Mage containter
 ```bash
 docker compose build
 ```
-10. Finally, start the Docker container:
-
+9. Start the Docker container:
 ```bash
 docker compose up
 ```
-11. We just initialized a mage repository. It is present in your project under the name `air-quality`. Now, navigate to http://localhost:6789 in your browser!
-12. Time to work with mage. Go to the browser, find **pipelines**, click on air_quality_api pipeline and click on Run@once. 
+10. Once the docker container is running navigate to (http://localhost:6789) in your browser
+11. Time to work with mage. Go to the browser, find **pipelines**, click on `nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
 
 <table><tr>
-<td> <img src="images/mage-find-pipelines.png" width="150"/> </td>
-<td> <img src="images/pipeline-name.png" width="350"/> </td>
+<td> <img src="images/go-to-pipelines.png" width="150"/> </td>
+<td> <img src="images/locate-pipeline.png" width="350"/> </td>
 <td> <img src="images/run-pipeline.png" width="250"/> </td>
 <tr>
 <td>Find pipeline</td>
@@ -130,6 +122,15 @@ docker compose up
 <td>Run pipeline </td>
 </tr>
 </tr></table>
+
+After it runs, you will have a parquet file in the datalake and 3 tables in Google BigQuery.
+
+#### Setting up and running dbt project
+Pipeline should look like this:
+![Dashboard](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/pipeline.png)
+
+11. Time to work with mage. Go to the browser, find **pipelines**, click on 	`nasa_exoplanets_to_gcs` pipeline and click on Run@once. 
+
 
 ## Visualizing the results
 I have publishing the following [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c) to exhibit the results of the final datasets.
