@@ -131,7 +131,7 @@ docker compose up
 
 <table><tr>
 <td> <img src="images/run.png"/> </td>
-<td> <img src="images/terraform-vars.png"/> </td>
+<td> <img src="images/config-variables.png"/> </td>
 <tr>
 <td>Click Run@once</td>
 <td>Specify variables</td>
