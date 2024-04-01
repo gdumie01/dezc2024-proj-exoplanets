@@ -47,12 +47,11 @@ The project has been structured with the following folders and files:
 
 <table><tr>
 <td> <img src="images/pipeline.png" width="350"/> </td>
-<td> <img src="images/dbt-lineage.png" width="350"/> </td>
-<td> <img src="images/run.png" width="250"/> </td>
-<tr>
-<td></td>
-<td>Lineage Graph</td>
+<td> <img src="images/dbt-lineage.png" width="400"/> </td>
 </tr>
+<tr>
+<td>Pipeline DAG</td>
+<td>Lineage Graph</td>
 </tr></table>
 
 ## Project Setup
@@ -136,7 +135,7 @@ docker compose up
 </tr>
 </tr></table>
 
-After it runs, you will have a parquet file in the datalake and 3 tables in Google BigQuery.
+After it runs, you will have a parquet file in the datalake and 3 tables in Google BigQuery: `nasa_exo_planets_raw`,`nasa_exo_planets_raw_ext`,`nasa_exo_planets_raw_optimized`
 
 Pipeline should look like this:
 
