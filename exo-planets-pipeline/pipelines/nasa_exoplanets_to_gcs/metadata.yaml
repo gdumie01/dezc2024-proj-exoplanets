@@ -116,13 +116,13 @@ blocks:
   language: sql
   name: gc_to_bq_optimized
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - download_to_bucket
   uuid: gc_to_bq_optimized
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     data_provider: bigquery
@@ -173,5 +173,8 @@ spark_config: {}
 tags: []
 type: python
 uuid: nasa_exoplanets_to_gcs
-variables_dir: /home/src/mage_data/exo-planets
+variables:
+  bucket_name: dl_exoplanets
+  gcp_project_id: dezc24-exoplanets
+variables_dir: /home/src/mage_data/exo-planets-pipeline
 widgets: []
