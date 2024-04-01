@@ -45,6 +45,16 @@ The project has been structured with the following folders and files:
 * It then proceeds on to creating optimized (via clustering and partioning) and non-optimized raw versions of the data in the DataWarehouse.
 * Once the data is in BigQuery, several steps are perfomed using dbt (including generating ids, calculating some parameters like gravity surface) to have the final clean dataset again in BigQuery ready for visualization.
 
+<table><tr>
+<td> <img src="images/pipeline.png" width="350"/> </td>
+<td> <img src="images/dbt-lineage.png" width="350"/> </td>
+<td> <img src="images/run.png" width="250"/> </td>
+<tr>
+<td></td>
+<td>Lineage Graph</td>
+</tr>
+</tr></table>
+
 ## Project Setup
 ### Prerequisites
 1. [Docker](https://docs.docker.com/engine/install/)
