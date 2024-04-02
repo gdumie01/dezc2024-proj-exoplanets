@@ -1,6 +1,6 @@
 # Exoplanets | Final project for Data Engineering Zoomcap 2024
 
-This repository contains the code and materials for the final project of the Data Engineering Zoomcamp  in the 2024 Cohort. 
+This repository contains the code and materials for the final project of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp)  in the 2024 Cohort. 
 
 The project focuses on building an end-to-end data pipeline from [NASA's exoplanet archive](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS) all the way up to the datasets that feed the final [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c):
 
