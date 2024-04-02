@@ -85,6 +85,8 @@ Setting up GCP would require a GCP account. A GCP account can be created for fre
    - Select the "JSON" key type and click "Create" to download the private key file. This key would be used to interact to the google API from Mage.
    - Store the json key as you please, but then copy it into the `root` directory of this project and give it exactly the name `keys.json`.
 
+---
+
 ### Executing the code
 
 *Note: these instructions are used for macOS/Linux/WSL, for Windows it may differ*
