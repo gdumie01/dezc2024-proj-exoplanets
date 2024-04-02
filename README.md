@@ -130,7 +130,7 @@ docker compose up
 
 <table><tr>
 <td> <img src="images/run.png"/> </td>
-<td> <img src="images/config-variables.png"/> </td>
+<td> <img src="images/config_variables.png"/> </td>
 <tr>
 <td>Click Run@once</td>
 <td>Specify variables</td>
