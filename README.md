@@ -70,15 +70,15 @@ The project has been structured with the following folders and files:
 
 *Note: these instructions are used for macOS/Linux/WSL, for Windows it may differ*
 
-1. Clone this repository
+**1. Clone this repository**
 ```bash
 git clone https://github.com/gdumie01/dezc2024-proj-exoplanets.git
 ```
-2. Enter its root directory:
+**2. Enter its root directory**
 ```bash
 cd dezc2024-proj-exoplanets
 ```
-3. Setup a new GCP project
+**3. Setup a new GCP project**
 
 * Start by creating a GCP account at [this link](https://cloud.google.com/) (although GCP account can be created for free on trial but would still require a credit card to signup)
 * Navigate to the GCP Console and create a new project. Give the project an appropriate name and take note of the `Project ID`.
@@ -96,57 +96,54 @@ cd dezc2024-proj-exoplanets
 
 #### Running Terraform
 
-4. Edit terraform **variables.tf** file.
+**4. Edit terraform **variables.tf** file.**
 You need to change the variable `project` to the `Project ID` of the GCP project you've just created and give a bucket name to `data-lake-bucket` to something that doesn't clash with existing buckets (e.g.: add a number to the end)
 
 ![Terraform](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/terraform-vars.png)
 
 My resources are created for region **EU**. If needed, you can change it in **variables.tf** file - make sure you change it accordingly in the following steps, specially in dbt.
 
-5. Prepare working directory for following commands:
+**5. Prepare working directory for following commands:**
 ```bash
 terraform init
 ```
-6. Check execution plan:
+**6. Check execution plan (optional)**
 ```bash
 terraform plan
 ```
-7. Create the infrastructure:
+**7. Create the infrastructure**
 ```bash
 terraform apply
 ```
 When you are done with the project, you can release all resources by running `terraform destroy`.
 
 #### Executing Mage Pipeline
-8. Rename `dev.env` to simply `.env`.
+**8. Rename `dev.env` to simply `.env`.**
 ```bash
 mv dev.env .env
 ```
-9. Edit the .env file with the same `Project ID` and bucket name you just configure in Terraform
+**9. Edit the .env file with the same `Project ID` and bucket name you just configure in Terraform**
 ```
 PROJECT_NAME=exo-planets-pipeline
 GCP_PROJECT_NAME=<YOUR PROJECT ID>
 BUCKET_NAME=<YOUR BUCKET NAME>
 ```
-10. Build the Mage containter
+**10. Build the Mage containter**
 ```bash
 docker compose build
 ```
-11. Start the Docker container:
+**11. Start the Docker container:**
 ```bash
 docker compose up
 ```
-12. Once the docker container is running navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
+**12. Access Mage Web Interface**
+Once docker container is running navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
 
-13. To your ease, I have created a service in the docker compose that triggers a pipeline execution when you `run docker compose up`, so once the page is loaded you should already see an execution running. If for some reason it didn't work, or if you need to, you can always click on Run@once.
-<table><tr>
-<td> <img src="images/run.png"/> </td>
-<td> <img src="images/config_variables.png"/> </td>
-<tr>
-<td>Click Run@once</td>
-<td>Specify variables</td>
-</tr>
-</tr></table>
+**13. Monitor or trigger the execution**
+To your ease, I have created a service in the docker compose that triggers a pipeline execution when you `run docker compose up`, so once the page is loaded you should already see an execution running. If for some reason it didn't work, or if you need to, you can always click on *Run@once*.
+
+**14. Your done**
+While the pipeline executes you can check the code inside each block.
 
 After it runs, you will have:
 * A parquet file in the datalake
@@ -154,7 +151,7 @@ After it runs, you will have:
 
 ![Outputs](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/dw-outputs.png)
 
-14. In case you forgot or mistakenly set the .env variables you can alway fire up a terminal and terminate the mage container
+In case you forgot or mistakenly set the .env variables you can alway fire up a terminal and terminate the mage container
     
 ```bash
 docker compose down
