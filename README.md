@@ -48,7 +48,7 @@ NOTE: I don't have any background in astronomy or astrophysic - so if you are a 
 
 #### Project Structure
 The project has been structured with the following folders and files:
-* `exo-planets-pipeline`: With all the code with for orchestration pipeline, including dbt models under `èxo-planets-pipeline/dbt` (which can be added as a dbt sub-directory in dbt cloud)
+* `exo-planets-pipeline`: With all the code with for orchestration pipeline, including dbt models under `exo-planets-pipeline/dbt` (which can be added as a dbt sub-directory in dbt cloud)
 * `dashboard`: Report export from Looker Studio
 * `images`: Printouts of results
 
