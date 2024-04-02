@@ -1,0 +1,12 @@
+triggers:
+- envs: []
+  last_enabled_at: 2024-04-02 16:53:12.693385
+  name: populate
+  pipeline_uuid: nasa_exoplanets_to_gcs
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-04-02 16:52:00
+  status: active
+  variables: {}

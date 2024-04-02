@@ -18,3 +18,11 @@ services:
     volumes:
       - .:/home/src/
     restart: on-failure:5
+  pipeline_trigger:
+    image: mageai/mageai:latest
+    depends_on:
+      - magic
+    entrypoint: /bin/sh
+    command: >
+      -c "sleep 10; until curl -sSf http://magic:6789/pipelines/nasa_exoplanets_to_gcs/; do sleep 5; done && \
+      curl -X POST http://magic:6789/api/pipeline_schedules/1/pipeline_runs/458c7ef08f9148019ef4f90303789e18"
