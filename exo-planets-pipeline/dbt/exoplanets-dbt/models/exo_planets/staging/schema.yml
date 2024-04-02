@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: staging
     database:
-      dezc24-exoplanets
+      "{{ env_var('GCP_PROJECT_NAME') }}"
     schema:
       dw_exo_planets
     tables:
