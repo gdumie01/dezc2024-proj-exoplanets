@@ -85,7 +85,7 @@ cd dezc2024-proj-exoplanets
 * Create a service account:
   * In the left sidebar, click on "IAM & Admin" and then click on "Service accounts."
   * Click on the "Create service account" button at the top of the page.
-  * Enter a name for your service account and a description (optional).
+  * Enter a name for your service account and click "Create and Continue"
   * Add the roles `BigQuery Admin` and `Storage Admin` to the service account.
   * Click "Done" to create the service account.
   * After you've created the service account, you need to download its private key file.
@@ -93,7 +93,7 @@ cd dezc2024-proj-exoplanets
     * Click on the "Keys" tab and then click the "Add Key" button.
     * Select the "JSON" key type and click "Create" to download the private key file.
     * Store the json key as you please, but then copy it into the `root` directory of this project and give it exactly the name `keys.json`.
-  * Finally, you need to activate BigQuery API by the [following link](https://console.cloud.google.com/apis/api/bigquery.googleapis.com) and clicking "Enable" (make sure it is your recently created project that is selected on the top left side)
+  * Finally, you need to activate BigQuery API by the [following link](https://console.cloud.google.com/apis/api/bigquery.googleapis.com) and ensuring the API is running (make sure it is your recently created project that is selected on the top left side and click "Enable" if applicable)
 
 #### Running Terraform
 
@@ -137,9 +137,13 @@ docker compose build
 ```bash
 docker compose up
 ```
+You know need to wait a few seconds while Mage is setup - don't worry if you see some errors in your console while it happens.
+
+NOTE: Please ensure you don't have any other mage instances running as it might lead to conflict and have the pipeline fail the first time.
+
 **12. Access Mage Web Interface**
 
-Once docker container is running navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
+Once docker container is running, navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
 
 **13. Monitor or trigger the execution**
 
