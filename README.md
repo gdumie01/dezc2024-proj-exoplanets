@@ -25,7 +25,7 @@ The project focuses on building an end-to-end data pipeline from [NASA's exoplan
 
 ### Problem description
 
-Space was always something that has fascinated me. More recently I have been an avid follower of the [Astrum](https://www.youtube.com/@astrumspace) youtube channel where the creator exposes several exciting astronomy topics in layman's terms. While watching the videos, I have felt the need to have a more structured notion about what exactly what we know and don't know about the universe, in particular the planets outside our solar system (exoplanets). Luckily I've found [NASA's exoplanet archive](https://exoplanetarchive.ipac.caltech.edu/index.html) in the dataset lists for the Data Engineering Zoomcamp and decided to navigate thru the data to understand:
+Space was always something that has fascinated me. More recently I have been an avid follower of the [Astrum](https://www.youtube.com/@astrumspace) youtube channel where the creator exposes several exciting astronomy topics in layman's terms. While watching the videos, I have felt the need to have a more structured notion of what exactly we know and don't know about the universe, in particular the planets outside our solar system (exoplanets). Luckily I've found [NASA's exoplanet archive](https://exoplanetarchive.ipac.caltech.edu/index.html) in the dataset lists for the Data Engineering Zoomcamp and decided to navigate thru the data to understand:
 * Exactly how many planets have we discovered so far
 * How have we discovered them and what are the most relevant techniques
 * From all the planets that we have found, which ones could be potentially habitable taking into account:
