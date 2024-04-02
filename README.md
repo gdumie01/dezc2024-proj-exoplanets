@@ -16,12 +16,10 @@ The project focuses on building an end-to-end data pipeline from [NASA's exoplan
 </tr></table>
 
 ## Table of Contents
-- [Project Description](#project-description)
-- [Project Setup](#project-setup)
- - [Setting up GCP](#setting-up-gcp)
- - [Executing the code](#executing-the-code)
-- [Visualizing the results](#visualizing-the-results)
-- [Evaluation Criteria](#evaluation-criteria)
+* [Project Description](#project-description)
+* [Project Setup](#project-setup)
+* [Visualizing the results](#visualizing-the-results)
+* [Evaluation Criteria](#evaluation-criteria)
 
 ## Project description
 
