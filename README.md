@@ -15,6 +15,11 @@ The project focuses on building an end-to-end data pipeline from [NASA's exoplan
 <td>Looker Dashboard</td>
 </tr></table>
 
+- [Project Description](#project-description)
+- [Project Setup](#project-setup)
+- [Visualizing the results](#visualizing-the-results)
+- [Evaluation Criteria](#evaluation-criteria)
+
 ## Project description
 
 ### Problem description
