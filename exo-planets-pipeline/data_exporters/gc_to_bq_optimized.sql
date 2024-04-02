@@ -2,7 +2,7 @@
 CREATE OR REPLACE EXTERNAL TABLE `dw_exo_planets.nasa_exo_planets_raw_ext`
 OPTIONS (
   format = 'PARQUET',
-  uris = ['gs://{{ variables('bucket_name') }}/*.parquet']
+  uris = ['gs://{{ env_var('BUCKET_NAME') }}/*.parquet']
 );
 
 -- As we are filtering out all non-default plant configurations on the layers above we should cluster by default_flag

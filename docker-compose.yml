@@ -11,6 +11,8 @@ services:
     environment:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
       ENV: ${ENV}
+      GCP_PROJECT_NAME: ${GCP_PROJECT_NAME}
+      BUCKET_NAME: ${BUCKET_NAME}
     ports:
       - 6789:6789
     volumes:

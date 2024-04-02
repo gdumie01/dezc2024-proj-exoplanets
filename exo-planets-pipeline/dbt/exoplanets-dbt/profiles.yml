@@ -7,7 +7,7 @@ exo_planets-dbt:
     dev:
       type: bigquery
       method: service-account
-      project: {{ variables('gcp_project_id') }}
+      project: {{ env_var('GCP_PROJECT_NAME') }}
       dataset: dw_exo_planets
       threads: 1
       location: EU
