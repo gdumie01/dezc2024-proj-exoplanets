@@ -138,13 +138,16 @@ docker compose build
 docker compose up
 ```
 **12. Access Mage Web Interface**
+
 Once docker container is running navigate to (http://localhost:6789/pipelines/nasa_exoplanets_to_gcs/triggers) in your browser
 
 **13. Monitor or trigger the execution**
+
 To your ease, I have created a service in the docker compose that triggers a pipeline execution when you `run docker compose up`, so once the page is loaded you should already see an execution running. If for some reason it didn't work, or if you need to, you can always click on *Run@once*.
 
 **14. Your done**
-While the pipeline executes you can check the code inside each block.
+
+While the pipeline executes you can check the code inside each block by navigatin within mage.
 
 After it runs, you will have:
 * A parquet file in the datalake
