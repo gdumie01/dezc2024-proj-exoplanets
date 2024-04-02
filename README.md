@@ -93,6 +93,7 @@ cd dezc2024-proj-exoplanets
     * Click on the "Keys" tab and then click the "Add Key" button.
     * Select the "JSON" key type and click "Create" to download the private key file.
     * Store the json key as you please, but then copy it into the `root` directory of this project and give it exactly the name `keys.json`.
+  * Finally, you need to activate BigQuery API by the [following link](https://console.cloud.google.com/apis/api/bigquery.googleapis.com) and clicking "Enable" (make sure it is your recently created project that is selected on the top left side)
 
 #### Running Terraform
 
