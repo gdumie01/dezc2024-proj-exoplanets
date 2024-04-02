@@ -159,12 +159,6 @@ docker compose down
 ```
 And restart from whatever step you want in order to retry.
 
-#### Replicating the dashboard
-12. To replicate the dashboard, simply go to the [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c) URL, click on the *more options* icon at the top right end of the screen and select `Make a copy`
-13. Then simply point the datasources to the newly created tables within your project `fact_discovery` and `fact_habitability`
-
-![CopyReport](https://github.com/gdumie01/dezc2024-proj-exoplanets/blob/main/images/copy-report.png)
-
 ## Visualizing the results
 I have publishing the following [dashboard](https://lookerstudio.google.com/reporting/48002710-b1bd-42cf-b4a2-61cc555a3f8c) to exhibit the results of the final datasets.
 
