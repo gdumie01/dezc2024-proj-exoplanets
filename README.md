@@ -87,7 +87,7 @@ cd dezc2024-proj-exoplanets
   * Click on the "Create service account" button at the top of the page.
   * Enter a name for your service account and a description (optional).
   * Add the roles `BigQuery Admin` and `Storage Admin` to the service account.
-  * Click "Create" to create the service account.
+  * Click "Done" to create the service account.
   * After you've created the service account, you need to download its private key file.
     * Click on the service account you just created to view its details.
     * Click on the "Keys" tab and then click the "Add Key" button.
