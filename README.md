@@ -95,6 +95,8 @@ cd dezc2024-proj-exoplanets
     * Store the json key as you please, but then copy it into the `root` directory of this project and give it exactly the name `keys.json`.
   * Finally, you need to activate BigQuery API by the [following link](https://console.cloud.google.com/apis/api/bigquery.googleapis.com) and ensuring the API is running (make sure it is your recently created project that is selected on the top left side and click "Enable" if applicable)
 
+NOTE: Please ensure your project got automatically added to your billing account, otherwise you might get an error when running terraform.
+
 #### Running Terraform
 
 **4. Edit terraform **variables.tf** file.**
