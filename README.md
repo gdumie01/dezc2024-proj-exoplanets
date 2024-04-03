@@ -181,6 +181,10 @@ Key insights for me were:
 
 **In conclusion**: despite the rapid recent advacements of science, we are still a long way to be sure about habitability of exoplanets by humans.
 
+#### Reproducing the dashboard
+
+In case you want to try and replicate the dashboard to yourself, you can always click on the "More Options"  button at top right side of the dashboard, copy the dashboard and then in Looker Studio change the data sources to the fact tables created with the pipeline.
+
 ## Evaluation Criteria
 
 I aimed to hit the following evaluation criteria:
